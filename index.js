@@ -12,19 +12,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('collect-responses', {
             templateUrl: 'partials/collect-responses.html',
             controller: function($scope) {
-                  $scope.users.push({
-                    name: 'AAA',
-                    wtp: 5
-                  });
-                  $scope.users.push({
-                    name: 'BBB',
-                    wta: 4
-                  });
-                  $scope.users.push({
-                    name: 'CCC',
-                    wtp: 6,
-                    wta: 3
-                  });
+                //   $scope.users.push({
+                //     name: 'AAA',
+                //     wtp: 5
+                //   });
+                //   $scope.users.push({
+                //     name: 'BBB',
+                //     wta: 4
+                //   });
+                //   $scope.users.push({
+                //     name: 'CCC',
+                //     wtp: 6,
+                //     wta: 3
+                //   });
                 //   $scope.users.push({
                 //     name: 'DDD',
                 //     wtp: 2,
