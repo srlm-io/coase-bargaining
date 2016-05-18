@@ -1,7 +1,7 @@
-# Coase Bargaining App
-An app to facilitate coase bargaining
+# Coase Bargaining
+Bargain like an Econ.
 
-Based on [this post](http://akhilrao.github.io/micro%20theory/2016/05/10/coase-bargaining-externality.html) by Akhil Rao.
+An app based on [this post](http://akhilrao.github.io/micro%20theory/2016/05/10/coase-bargaining-externality.html) by Akhil Rao.
 
 Check it out [live on GitHub](https://rawgit.com/srlm-io/coase-bargaining/master/index.html).
 
