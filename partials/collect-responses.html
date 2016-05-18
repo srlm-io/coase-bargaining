@@ -1,0 +1,22 @@
+<h1>{{question.text}}</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Seller</th>
+            <th>Buyer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users">
+            <td>{{user.name}}</td>
+            <td><span class="glyphicon glyphicon-ok" ng-if="user.wta"></span></td>
+            <td><span class="glyphicon glyphicon-ok" ng-if="user.wtp"></span></td>
+        </tr>
+    </tbody>
+</table>
+
+<a class="btn btn-default" ui-sref="add-user.name">Add user</a>
+
+<a class="btn btn-default" ui-sref="show-results">Show results</a>

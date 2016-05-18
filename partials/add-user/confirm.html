@@ -1,0 +1,20 @@
+<table class="table">
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>{{currentUser.name}}</td>
+            <tr>
+                <td>Selling point (WTA)</td>
+                <td ng-if="currentUser.wta">{{currentUser.wta}}</td>
+                <td ng-if="!currentUser.wta">----</td>
+            </tr>
+            <tr>
+                <td>Buying point (WTP)</td>
+                <td ng-if="currentUser.wtp">{{currentUser.wtp}}</td>
+                <td ng-if="!currentUser.wtp">----</td>
+            </tr>
+    </tbody>
+</table>
+
+<a class="btn btn-default" ng-click="users.push(currentUser)" ui-sref="collect-responses">Confirm</a>
+<a class="btn btn-default" ui-sref="collect-responses">Cancel</a>

@@ -1,0 +1,49 @@
+<div class="form-group">
+    <label class="checkbox-inline">
+        <input type="checkbox" ng-model="revealPreferences"> Reveal Preferences
+    </label>
+</div>
+<label>How should the price be determined?</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="algorithm" value="split" ng-model="algorithm"> Split
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="algorithm" value="favor_buyer" ng-model="algorithm"> Favor Buyer
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="algorithm" value="favor_seller" ng-model="algorithm"> Favor Seller
+        </label>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th></th>
+            <td ng-attr-colspan="{{users.length}}">Sellers<span ng-if="revealPreferences"> (WTA)</span></td>
+        </tr>
+        <tr>
+            <td>Buyers<span ng-if="revealPreferences"> (WTP)</span></td>
+            <th ng-repeat="seller in users" ng-if="seller.wta">{{seller.name}} <span ng-if="revealPreferences">({{seller.wta}})</span></th>
+        </tr>
+        <tr ng-repeat="buyer in users" ng-if="buyer.wtp">
+            <th>{{buyer.name}}<span ng-if="revealPreferences"> ({{buyer.wtp}})</span></th>
+            <td ng-repeat="seller in users" ng-if="seller.wta" ng-class="{'success': seller.wta <= buyer.wtp }">
+                <div ng-if="seller.wta <= buyer.wtp">
+                    <span ng-if="algorithm === 'split'">{{(buyer.wtp - seller.wta)/2 + seller.wta}}</span>
+                    <span ng-if="algorithm === 'favor_buyer'">{{seller.wta}}</span>
+                    <span ng-if="algorithm === 'favor_seller'">{{buyer.wtp}}</span>
+                </div>
+                <span ng-if="!(seller.wta <= buyer.wtp)">----</span>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<a class="btn btn-default" ng-click="question.text=''; users.length = 0" ui-sref="start">Start Over</a>
